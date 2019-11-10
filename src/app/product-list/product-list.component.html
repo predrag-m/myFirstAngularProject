@@ -1,0 +1,27 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+
+  <a [title]="product.name + ' details'">
+    <h3>
+      {{ product.name }}
+    </h3>
+  </a>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <button (click)="share()">
+    Share
+  </button>
+
+  <app-product-alerts
+  [product]="product"
+  (notify)="onNotify()">
+  </app-product-alerts>
+
+</div>
+
+<!--red 21 smo dodali prilikom pisanja OUTPUT-a child komponente-->
+<!--Obrati paznju da nema zareza izmedju redova 20 i 21-->
